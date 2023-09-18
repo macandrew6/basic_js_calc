@@ -1,7 +1,8 @@
 let runningTotal = 0;
 let buffer = '0';
 let prevOperator;
-let cache = [];
+let cache = []; // when symbol is pressed save buffer && symbol 
+                // keep 2nd to last element in array on screen
 
 const screen = document.querySelector('.screen');
 
@@ -88,6 +89,7 @@ let flushOperation = (intBuffer) => {
 };
 
 let handleNumber = (numString) => {
+
   if (buffer === '0') {
     buffer = numString;
   } else {
